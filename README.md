@@ -1,4 +1,4 @@
-# Project Name
+# React Component Toolkit with ChatGPT and Azure OpenAI
 
 (short, 1-3 sentenced, description of the project)
 
@@ -16,9 +16,15 @@ This project framework provides the following features:
 
 (ideally very short, if any)
 
-- OS
-- Library version
-- ...
+#### To Run Locally
+- [Azure Developer CLI](https://aka.ms/azure-dev/install)
+- [Node.js](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/downloads)
+- [Powershell 7+ (pwsh)](https://github.com/powershell/powershell) 
+   - **Important**: Ensure you can run `pwsh.exe` from a PowerShell command. If this fails, you likely need to upgrade PowerShell.
+
+>NOTE: Your Azure Account must have `Microsoft.Authorization/roleAssignments/write` permissions, such as [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) or [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#owner).  
+
 
 ### Installation
 
