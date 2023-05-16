@@ -1,1 +1,1 @@
-# react-component-toolkit-openai-demo
+# React Component Toolkit with ChatGPT and Azure OpenAI
