@@ -6,9 +6,14 @@
 
 This project framework provides the following features:
 
-* Feature 1
-* Feature 2
-* ...
+* Integrates with Azure Open AI allowing the creation of components from a description alone.
+* Can convert a react component into an Azure API Management Widget.
+* Can be tested standalone using ladle which is built into the toolkit stack.
+* Includes a few example components including a markdown viewer, force-graph-3d component, etc.
+* Automatically adds dependencies for created components.
+* Uses css as code through Styled Components out of the box.
+
+
 
 ## Getting Started
 > **IMPORTANT:** In order to deploy and run this example, you'll need an **Azure subscription with access enabled for the Azure OpenAI service**. You can request access [here](https://aka.ms/oaiapply). You can also visit [here](https://azure.microsoft.com/free/cognitive-search/) to get some free Azure credits to get you started.
@@ -33,9 +38,9 @@ This project framework provides the following features:
     * For the target location, the regions that currently support the models used in this sample are **East US**, **South Central US**. or **West Europe** For an up-to-date list of regions and models, check [here](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models)
 
 > NOTE: It may take a minute for the services to be provisioned and te application to be fully deployed.
-1. After the services have been successfully provisioned, a postprovision script would automatically execute doing the following:
+1. After the services have been successfully provisioned, a post-provision script would automatically execute doing the following:
     * the react-component-toolkit would be cloned locally
-    * you would be able to follow the prompts in console and interact with the local toolkit to generate new react components (e.g. a fully working calculator)
+    * you would be able to follow the prompts in console and interact with the local toolkit to generate new react components (for full documentation on the react component toolkit, refer to [here](https://github.com/microsoft/react-component-toolkit)) 
 
 
 ## Resources

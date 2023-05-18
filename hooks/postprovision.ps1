@@ -4,9 +4,8 @@ $npmCmd = Get-Command npm
 $gitCmd = Get-Command git
 
 # git clone and checkouot
-Start-Process -FilePath ($gitCmd).Source -ArgumentList "clone git@github.com:MicrosoftCSA/react-component-toolkit.git" -Wait -NoNewWindow
+Start-Process -FilePath ($gitCmd).Source -ArgumentList "clone https://github.com/microsoft/react-component-toolkit.git" -Wait -NoNewWindow
 Set-Location ./react-component-toolkit
-Start-Process -FilePath ($gitCmd).Source -ArgumentList "checkout dev" -Wait -NoNewWindow
 
 # install.mjs
 Start-Process -FilePath ($nodeCmd).Source -ArgumentList "install.mjs" -Wait -NoNewWindow
