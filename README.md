@@ -1,6 +1,6 @@
 # React Component Toolkit with ChatGPT and Azure OpenAI
 
-(short, 1-3 sentenced, description of the project)
+The [React Component Toolkit](https://github.com/microsoft/react-component-toolkit#install-via-azdev) is a toolkit for building and testing react components and includes a set of unique features including AI component generation and automatic conversion to Azure APIM Widgets. This samples provides auto-provisioning of necessary Azure resources and an interactive process of utilizing the toolkit.
 
 ## Features
 
@@ -12,7 +12,6 @@ This project framework provides the following features:
 * Includes a few example components including a markdown viewer, force-graph-3d component, etc.
 * Automatically adds dependencies for created components.
 * Uses css as code through Styled Components out of the box.
-
 
 
 ## Getting Started
