@@ -10,6 +10,10 @@ Set-Location ./react-component-toolkit
 # install.mjs
 Start-Process -FilePath ($nodeCmd).Source -ArgumentList "install.mjs" -Wait -NoNewWindow
 
+# ladle:dev - as background job - 
+Write-Host "Lauching ladle..."  
+$ladle = Start-Job -FilePath ../hooks/ladle-dev.ps1
+
 $continue = $true  
   
 while ($continue) {  
@@ -21,9 +25,7 @@ while ($continue) {
     $test = Read-Host "Would you like to test the component? (y/N)"
     if ($test -eq "y") 
     {  
-        # ladle:dev - as background job - 
-        Write-Host "Lauching ladle..."  
-        $ladle = Start-Job -FilePath ../hooks/ladle-dev.ps1
+        Start-Process -FilePath ($npmCmd).Source -ArgumentList "run test" -Wait -NoNewWindow
     }  
   
     $package = Read-Host "Would you like to package the component as an Azure API Management developer portal widget and test it? (y/N)"  
