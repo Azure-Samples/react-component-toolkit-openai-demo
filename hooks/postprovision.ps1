@@ -9,6 +9,7 @@ Set-Location ./react-component-toolkit
 
 # install.mjs
 Start-Process -FilePath ($nodeCmd).Source -ArgumentList "install.mjs" -Wait -NoNewWindow
+Start-Process -FilePath ($npmCmd).Source -ArgumentList "install" -Wait -NoNewWindow
 
 # ladle:dev - as background job - 
 Write-Host "Lauching ladle..."  
@@ -21,7 +22,7 @@ while ($continue) {
     
     # createnew.mjs
     Start-Process -FilePath ($nodeCmd).Source -ArgumentList "createnew.mjs $($description)" -Wait -NoNewWindow
-  
+    Start-Process -FilePath ($npmCmd).Source -ArgumentList "install" -Wait -NoNewWindow
     $test = Read-Host "Would you like to test the component? (y/N)"
     if ($test -eq "y") 
     {  
