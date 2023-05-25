@@ -21,8 +21,9 @@ while ($continue) {
     $description = Read-Host "Enter a description for the new React component"  
     
     # createnew.mjs
-    Start-Process -FilePath ($nodeCmd).Source -ArgumentList "createnew.mjs $($description)" -Wait -NoNewWindow
+    Start-Process -FilePath ($nodeCmd).Source -ArgumentList "createnew.mjs `"$($description)`"" -Wait -NoNewWindow
     Start-Process -FilePath ($npmCmd).Source -ArgumentList "install" -Wait -NoNewWindow
+    
     $test = Read-Host "Would you like to test the component? (y/N)"
     if ($test -eq "y") 
     {  
