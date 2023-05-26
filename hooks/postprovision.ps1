@@ -12,7 +12,7 @@ Start-Process -FilePath ($nodeCmd).Source -ArgumentList "install.mjs" -Wait -NoN
 Start-Process -FilePath ($npmCmd).Source -ArgumentList "install" -Wait -NoNewWindow
 
 # ladle:dev - as background job - 
-Write-Host "Lauching ladle..."  
+Write-Host "Lauching ladle. Please navigate to http://localhost:61000/ to view the ladle dashboard for Windows..." 
 $ladle = Start-Job -FilePath ../hooks/ladle-dev.ps1
 
 $continue = $true  
@@ -27,7 +27,7 @@ while ($continue) {
     $test = Read-Host "Would you like to test the component? (y/N)"
     if ($test -eq "y") 
     {  
-        Start-Process -FilePath ($npmCmd).Source -ArgumentList "run test" -Wait -NoNewWindow
+        Start-Process -FilePath ($npmCmd).Source -ArgumentList "run test:update" -Wait -NoNewWindow
     }  
   
     $package = Read-Host "Would you like to package the component as an Azure API Management developer portal widget and test it? (y/N)"  
