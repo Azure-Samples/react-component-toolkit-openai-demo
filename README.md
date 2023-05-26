@@ -2,6 +2,8 @@
 
 The [React Component Toolkit](https://github.com/microsoft/react-component-toolkit#install-via-azdev) is a toolkit for building and testing react components and includes a set of unique features including AI component generation and automatic conversion to Azure APIM Widgets. This samples provides auto-provisioning of necessary Azure resources and an interactive process of utilizing the toolkit.
 
+![RCT Architecture](docs/Architecture-rct.png)
+
 ## Features
 
 This project framework provides the following features:
