@@ -21,7 +21,7 @@ param sku string = 'Consumption'
 
 @description('The instance size of this API Management service.')
 @allowed([ 0, 1, 2 ])
-param skuCount int = 0
+param skuCount int = 1
 
 @description('Azure Application Insights Name')
 param applicationInsightsName string
@@ -76,4 +76,4 @@ resource applicationInsights 'Microsoft.Insights/components@2020-02-02' existing
 }
 
 output apimServiceName string = apimService.name
-output endpoint string = apimService.properties.gatewayUrl
+output developerEndpoint string = apimService.properties.developerPortalUrl
