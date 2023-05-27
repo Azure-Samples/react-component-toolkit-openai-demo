@@ -69,6 +69,7 @@ module apim './core/gateway/apim.bicep' = {
   params: {
     name: !empty(apimServiceName) ? apimServiceName : '${abbrs.apiManagementService}${resourceToken}'
     location: location
+    sku:'Standard'
     tags: tags
     applicationInsightsName: monitoring.outputs.applicationInsightsName
   }
@@ -111,7 +112,7 @@ module openAi 'core/ai/cognitiveservices.bicep' = {
 output AOI_DEPLOYMENT string = chatGptDeploymentName
 output AOI_APIKEY string = openAi.outputs.key
 output AOI_ENDPOINT string = openAi.outputs.endpoint
-output APIM_OPENURL string = apim.outputs.endpoint
+output APIM_OPENURL string = apim.outputs.developerEndpoint
 output APIM_RESOURCEID string ='subscriptions/${subscription().subscriptionId}/resourceGroups/${resourceGroup.name}/providers/Microsoft.ApiManagement/service/${apim.outputs.apimServiceName}'
 output AOI_ENABLED bool = useAOI
 
