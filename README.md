@@ -36,9 +36,8 @@ This project framework provides the following features:
 1. cd react-component-toolkit-openai-demo
 1. Run `azd auth login`
 1. Run `azd up` - This will provision Azure resources in your specified azd environment.
->NOTE: For the target location, the regions that currently support the models used in this sample are **East US**, **South Central US**, or **West Europe** For an up-to-date list of regions and models, check [here](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models)
+> NOTE: For the target location, the regions that currently support the models used in this sample are **East US**, **South Central US**, or **West Europe** For an up-to-date list of regions and models, check [here](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models). It may take a minute for the services to be provisioned and te application to be fully deployed.
 
-> NOTE: It may take a minute for the services to be provisioned and te application to be fully deployed.
 1. After the services have been successfully provisioned, a post-provision script would automatically execute doing the following:
     * the react-component-toolkit would be cloned locally
     * you would be able to follow the prompts in console and interact with the local toolkit to generate new react components (for full documentation on the react component toolkit, refer to [here](https://github.com/microsoft/react-component-toolkit)) 
