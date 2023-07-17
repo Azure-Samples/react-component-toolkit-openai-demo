@@ -20,6 +20,7 @@ param logAnalyticsName string = ''
 param applicationInsightsDashboardName string = ''
 param applicationInsightsName string = ''
 param useAOI bool = true
+param chatGptDeploymentCapacity int = 30
 
 var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
@@ -88,6 +89,7 @@ module openAi 'core/ai/cognitiveservices.bicep' = {
     tags: tags
     sku: {
       name: openAiSkuName
+
     }
     deployments: [
       {
@@ -99,6 +101,9 @@ module openAi 'core/ai/cognitiveservices.bicep' = {
         }
         scaleSettings: {
           scaleType: 'Standard'
+        }
+        sku: {
+          capacity: chatGptDeploymentCapacity
         }
       }
     ]
