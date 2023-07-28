@@ -9,9 +9,6 @@ param environmentName string
 @description('Primary location for all resources')
 param location string
 
-@description('Id of the user or app to assign application roles')
-param principalId string = ''
-
 param appServicePlanName string = ''
 param resourceGroupName string = ''
 param openAiServiceName string = ''
@@ -120,6 +117,7 @@ output AOI_ENDPOINT string = openAi.outputs.endpoint
 output APIM_OPENURL string = apim.outputs.developerEndpoint
 output APIM_RESOURCEID string ='subscriptions/${subscription().subscriptionId}/resourceGroups/${resourceGroup.name}/providers/Microsoft.ApiManagement/service/${apim.outputs.apimServiceName}'
 output AOI_ENABLED bool = useAOI
+output APIM_TENANTID string = tenant().tenantId
 
 
 
