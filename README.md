@@ -8,7 +8,7 @@ The [React Component Toolkit](https://github.com/microsoft/react-component-toolk
 
 This project framework provides the following features:
 
-* Integrates with Azure Open AI allowing the creation of components from a description alone.
+* Integrates with Azure OpenAI allowing the creation of components from a description alone.
 * Can convert a react component into an Azure API Management Widget.
 * Can be tested standalone using ladle which is built into the toolkit stack.
 * Includes a few example components including a markdown viewer, force-graph-3d component, etc.
