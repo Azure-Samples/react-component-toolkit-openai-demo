@@ -30,7 +30,7 @@ while ($continue) {
         Start-Process -FilePath ($npmCmd).Source -ArgumentList "run test:update" -Wait -NoNewWindow
     }  
   
-    $package = Read-Host "Would you like to package the component as an Azure API Management developer portal widget and test it? (y/N)"  
+    $package = Read-Host "Would you like to package the component as a custom Azure API Management widget and test it locally in development mode? (y/N)"  
     if ($package -eq "y") 
     {  
         $components = Get-ChildItem "./src/components" -Directory | Where-Object { $_.Name -notin @("bingmaps", "common", "footer", "graphikle", "markdownviewer", "index.ts", "signin", "styledtext") }  
@@ -41,12 +41,14 @@ while ($continue) {
         else 
         {  
             Write-Host "Components: $($components.Name -join ', ')"  
-            $componentName = Read-Host "Enter the name of the component to publish to Azure API Management"  
+            $componentName = Read-Host "Enter the name of the component to package and test"  
 
             if ($components.Name -contains $componentName) {  
                 if (Test-Path "./src/components/$componentName") {
                     # packagewidget.mjs
                     Start-Process -FilePath ($nodeCmd).Source -ArgumentList "packagewidget.mjs $($componentName)" -Wait -NoNewWindow
+                    Start-Process -FilePath ($nodeCmd).Source -ArgumentList "hostwidget.mjs $($componentName)" -Wait -NoNewWindow
+                    
                 } else {  
                     Write-Host "Component directory does not exist."  
                     Continue  
@@ -57,12 +59,42 @@ while ($continue) {
             }  
             
         }  
+    
     }  
-  
+    $deploy = Read-Host "Would you like to deploy the packaged widget to APIM? (y/N)"  
+    if ($deploy -eq "y") 
+    {  
+        $components = Get-ChildItem "./src/components" -Directory | Where-Object { $_.Name -notin @("bingmaps", "common", "footer", "graphikle", "markdownviewer", "index.ts", "signin", "styledtext") }  
+        if ($components.Count -eq 0) 
+        {  
+            Write-Host "No components found."  
+        } 
+        else 
+        {  
+            Write-Host "Components: $($components.Name -join ', ')"  
+            $componentName = Read-Host "Enter the name of the component to deploy"  
+
+            if ($components.Name -contains $componentName) {  
+                if (Test-Path "./src/components/$componentName") {
+                    # packagewidget.mjs
+                    Start-Process -FilePath ($nodeCmd).Source -ArgumentList "deploywidget.mjs $($componentName)" -Wait -NoNewWindow
+                    
+                } else {  
+                    Write-Host "Component directory does not exist."  
+                    Continue  
+                }  
+            } else {  
+                Write-Host "Invalid component name."  
+                Continue  
+            }  
+            
+        }  
+    }
     $continue = Read-Host "Do you want to create another component? (y/N)"  
     if ($continue -ne "y") {  
         $continue = $false
     }
+
 }  
 # stop all backgroung jobs
 Get-Job | Stop-Job
