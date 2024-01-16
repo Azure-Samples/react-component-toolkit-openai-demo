@@ -3,7 +3,7 @@ page_type: sample
 languages:
 - azdeveloper
 - bicep
-- nodejs
+- powershell
 products:
 - azure
 - azure-api-management
