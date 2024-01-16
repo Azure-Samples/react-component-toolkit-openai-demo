@@ -1,3 +1,19 @@
+---
+page_type: sample
+languages:
+- azdeveloper
+- bicep
+- nodejs
+products:
+- azure
+- azure-api-management
+- azure-openai-service
+urlFragment: react-component-toolkit-openai-demo
+name: React Component Toolkit with ChatGPT and Azure OpenAI
+description: A sample demo for building and testing react components and includes a set of unique features including AI component generation and automatic conversion to Azure APIM Widgets.
+---
+<!-- YAML front-matter schema: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main#supported-metadata-fields-for-readmemd -->
+
 # React Component Toolkit with ChatGPT and Azure OpenAI
 
 The [React Component Toolkit](https://github.com/microsoft/react-component-toolkit#install-via-azdev) is a toolkit for building and testing react components and includes a set of unique features including AI component generation and automatic conversion to Azure APIM Widgets. This samples provides auto-provisioning of necessary Azure resources and an interactive process of utilizing the toolkit.
