@@ -7,7 +7,7 @@ languages:
 products:
 - azure
 - azure-api-management
-- azure-openai-service
+- azure-openai
 urlFragment: react-component-toolkit-openai-demo
 name: React Component Toolkit with ChatGPT and Azure OpenAI
 description: A sample demo for building and testing react components and includes a set of unique features including AI component generation and automatic conversion to Azure APIM Widgets.
